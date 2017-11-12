@@ -5,19 +5,21 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "server:dev": "nodemon --watch './api' --exec 'yarn run webpack:server && yarn run serve:ssr'",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ssr":
-      "yarn run build:client-and-server-bundles && yarn run webpack:server",
+    "build:ssr": "yarn run build:client-and-server-bundles && yarn run webpack:server",
     "serve:ssr": "node dist/server.js",
-    "build:client-and-server-bundles":
-      "ng build --prod && ng build --prod --app 1 --output-hashing=false",
-    "webpack:server":
-      "webpack --config webpack.server.config.js --progress --colors"
+    "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
-  "browserslist": ["last 2 versions", "not ie <= 10", "not ie_mob <= 10"],
+  "browserslist": [
+    "last 2 versions",
+    "not ie <= 10",
+    "not ie_mob <= 10"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -32,6 +34,7 @@
     "@angular/router": "^5.0.0",
     "@nguniversal/express-engine": "^5.0.0-beta.5",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5",
+    "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "rxjs": "^5.5.2",
@@ -54,6 +57,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodemon": "^1.12.1",
     "protractor": "~5.1.2",
     "ts-node": "^3.3.0",
     "tslint": "~5.7.0",
