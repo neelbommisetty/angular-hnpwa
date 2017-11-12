@@ -192,9 +192,13 @@
   dependencies:
     "@types/jasmine" "*"
 
-"@types/node@^6.0.46", "@types/node@~6.0.60":
+"@types/node@^6.0.46":
   version "6.0.90"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.90.tgz#0ed74833fa1b73dcdb9409dcb1c97ec0a8b13b02"
+
+"@types/node@^8.0.51":
+  version "8.0.51"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.51.tgz#b31d716fb8d58eeb95c068a039b9b6292817d5fb"
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -979,9 +983,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codelyzer@~3.2.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-3.2.2.tgz#abbd4e5956c435677740846e5858c915f89679c3"
+codelyzer@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.0.1.tgz#0bb4cf52a325b257790f4980bb3c63833db10789"
   dependencies:
     app-root-path "^2.0.1"
     css-selector-tokenizer "^0.7.0"
@@ -5463,9 +5467,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-node@~3.2.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-3.2.2.tgz#bbd28e38af4aaa3e96076c466e1b220197c1a3ce"
+ts-node@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-3.3.0.tgz#c13c6a3024e30be1180dd53038fc209289d4bf69"
   dependencies:
     arrify "^1.0.0"
     chalk "^2.0.0"
