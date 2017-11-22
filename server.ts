@@ -8,8 +8,8 @@ import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 const compression = require('compression');
-const api = require('./api');
-
+// const api = require('./api');
+const spdy = require('spdy');
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
@@ -46,8 +46,8 @@ app.engine(
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-// api server
-app.use('/api', api);
+// // api server
+// app.use('/api', api);
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
@@ -57,7 +57,16 @@ app.get('*', (req, res) => {
   res.render(join(DIST_FOLDER, 'browser', 'index.html'), { req });
 });
 
+const options = {
+  key: readFileSync('./server.key'),
+  cert: readFileSync('./server.crt')
+};
 // Start up the Node server
-app.listen(PORT, () => {
-  console.log(`Node server listening on http://localhost:${PORT}`);
+spdy.createServer(options, app).listen(4000, error => {
+  if (error) {
+    console.error(error);
+    return process.exit(1);
+  } else {
+    console.log('Listening on port: ' + 4000 + '.');
+  }
 });

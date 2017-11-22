@@ -1,1 +1,21 @@
-<div *ngIf="isBrowser">Yolo 1 2 3</div>
+<header>
+  <div id="header">
+    <a class="home-link" routerLink="/new" routerLinkActive="active">
+      HN
+    </a>
+    <div class="header-text">
+      <div class="left">
+        <span class="header-nav">
+          <a routerLink="/new" routerLinkActive="active"> new </a>
+          |
+          <a routerLink="/show" routerLinkActive="active"> show </a>
+          |
+          <a routerLink="/ask" routerLinkActive="active"> ask </a>
+          |
+          <a routerLink="/job" routerLinkActive="active"> jobs </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>
